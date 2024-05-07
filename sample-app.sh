@@ -1,13 +1,10 @@
 #!/bin/bash
 
-
-
 echo "FROM ubuntu:latest" >> Dockerfile
-echo "apt update && \
-        apt install -y apche2 && \
-        rm -rf /var/lib/apt/lists/*" >> Dockerfile
+echo "RUN apt-get update" >> Dockerfile
+echo "RUN apt-get install -y apache2" >> Dockerfile
+echo "RUN rm -rf /var/lib/apt/lists/*" >> Dockerfile
 echo "COPY  index.html /var/www/html" >> Dockerfile
-echo "COPY  ./templates /home/myapp/templates/" >> Dockerfile
 echo "EXPOSE 8080" >> Dockerfile
 echo "CMD ["usr/sbin/apache2ctl", "-D", "FOREGROUND"]" >> Dockerfile
 
