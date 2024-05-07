@@ -3,8 +3,8 @@
 
 
 echo "FROM ubuntu:latest" >> Dockerfile
-echo "apt-get update && \
-        apt-get install -y apche2 && \
+echo "apt update && \
+        apt install -y apche2 && \
         rm -rf /var/lib/apt/lists/*" >> Dockerfile
 echo "COPY  index.html /var/www/html" >> Dockerfile
 echo "COPY  ./templates /home/myapp/templates/" >> Dockerfile
